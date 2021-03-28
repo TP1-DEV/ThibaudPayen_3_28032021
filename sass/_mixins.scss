@@ -1,0 +1,36 @@
+@mixin shadow {
+  box-shadow: 0.25rem 0.25rem 1rem -0.5rem #7e7e7e;
+}
+@mixin btn {
+  background: linear-gradient(to left top, $primary-color, $secondary-color);
+  color: $white;
+  border: none;
+  font-weight: bold;
+  width: 12rem;
+  height: 3rem;
+  border-radius: 2rem;
+  margin: 2rem auto 3rem;
+  @include shadow;
+  &:focus {
+    outline: none;
+  }
+}
+@mixin cards {
+  display: flex;
+  background-color: $white;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  @include shadow;
+}
+@mixin price {
+  display: flex;
+  font-weight: bold;
+  align-items: flex-end;
+  margin: 1rem;
+}
+@mixin title {
+  font-family: $logo-font;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem 0 0.5rem 0;
+}
