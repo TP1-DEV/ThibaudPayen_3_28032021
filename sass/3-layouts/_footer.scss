@@ -1,0 +1,27 @@
+.footer {
+  background-color: $footer-bg;
+  color: $white;
+  padding: 2rem 1rem;
+  h2 {
+    font-family: $logo-font;
+    font-weight: normal;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  &__nav {
+    .links {
+      display: flex;
+      color: $white;
+      align-items: center;
+      margin: 0.5rem 0;
+      .fa-utensils {
+        font-size: 0.9rem;
+        margin-right: 0.6rem;
+      }
+      .fa-hands-helping {
+        font-size: 0.7rem;
+        margin-right: 0.4rem;
+      }
+    }
+  }
+}

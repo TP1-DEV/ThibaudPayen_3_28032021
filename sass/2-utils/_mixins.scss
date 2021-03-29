@@ -34,3 +34,14 @@
   text-align: center;
   margin: 1rem 0 0.5rem 0;
 }
+@mixin arrow {
+  .header__title {
+    position: relative;
+  }
+  &.fa-arrow-left {
+    position: absolute;
+    left: 1rem;
+    top: 1.6rem;
+    font-size: 1.5rem;
+  }
+}

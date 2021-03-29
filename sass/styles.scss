@@ -1,7 +1,12 @@
-@import "reset";
-@import "fonts";
-@import "variables";
-@import "mixins";
+@import "./1-base/reset";
+@import "./1-base/fonts";
+@import "./2-utils/variables";
+@import "./2-utils/mixins";
+@import "./3-layouts/footer";
+
+* {
+  font-family: $txt-font;
+}
 
 .btn {
   @include btn;
@@ -14,6 +19,9 @@
 }
 .title {
   @include title;
+}
+.fa-arrow-left {
+  @include arrow;
 }
 
 .homepage {
@@ -105,7 +113,7 @@
   }
   .cards__restaurants {
     flex-direction: column;
-    height: 15.625em;
+    height: 15.625rem;
     figure {
       position: relative;
       flex: 1;
@@ -189,7 +197,6 @@
 .restaurants__page--title {
   h1 {
     font-family: $logo-font;
-    margin-bottom: 2rem;
   }
   .heart--restaurant {
   }
@@ -202,32 +209,5 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
-  }
-}
-.footer {
-  background-color: $footer-bg;
-  color: $white;
-  padding: 2rem 1rem;
-  h2 {
-    font-family: $logo-font;
-    font-weight: normal;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
-  &__nav {
-    .links {
-      display: flex;
-      color: $white;
-      align-items: center;
-      margin: 0.5rem 0;
-      .fa-utensils {
-        font-size: 0.9rem;
-        margin-right: 0.6rem;
-      }
-      .fa-hands-helping {
-        font-size: 0.7rem;
-        margin-right: 0.4rem;
-      }
-    }
   }
 }
