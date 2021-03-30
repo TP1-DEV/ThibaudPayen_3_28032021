@@ -1,0 +1,57 @@
+.restaurants__title {
+  h1 {
+    font-family: "shrikhand";
+  }
+}
+.restaurants__menu {
+  display: flex;
+  flex-direction: column;
+  background-color: $base-bg;
+  width: 100%;
+  border-radius: 2rem 2rem 0 0;
+  padding: 2rem 1rem;
+  footer {
+    display: flex;
+  }
+}
+.fig__restaurants {
+  height: 15.625rem;
+  @include img-ratio;
+}
+.restaurants__article {
+  background-color: $base-bg;
+  border-radius: 2rem 2rem 0 0;
+}
+.restaurants__section {
+  padding: 1rem;
+  h1 {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin: 2rem 0 1.5rem 0;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $tertiary-color;
+      width: 2.5rem;
+      height: 0.25rem;
+      top: 1.5rem;
+      left: 0;
+    }
+  }
+  .restaurants__desc {
+    p {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 0.925rem;
+    }
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    .btn {
+      padding: 1rem 3rem;
+      margin: 2rem 0 3rem 0;
+    }
+  }
+}

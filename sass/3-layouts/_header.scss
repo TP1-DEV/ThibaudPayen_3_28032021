@@ -1,0 +1,16 @@
+.title {
+  @include title;
+}
+.title__restaurant {
+  @include title;
+  position: relative;
+  h1 {
+    margin: 0;
+  }
+  .fas {
+    position: absolute;
+    top: 0.765rem;
+    left: 1rem;
+    font-size: 1.5rem;
+  }
+}

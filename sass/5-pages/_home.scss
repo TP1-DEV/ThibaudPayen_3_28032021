@@ -1,0 +1,154 @@
+.homepage {
+  &__form {
+    display: flex;
+    background-color: $form-bg;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    &__input {
+      background-color: $form-bg;
+      border: none;
+      font-weight: bold;
+      font-size: 1rem;
+      width: 8rem;
+      margin: 0 1rem;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  &__explore {
+    display: flex;
+    flex-direction: column;
+    background-color: $base-bg;
+    text-align: center;
+    h1 {
+      font-size: 1.5rem;
+      margin: 2rem 3rem 1rem;
+    }
+    p {
+      font-weight: lighter;
+      margin: 0 1rem;
+    }
+    .btn {
+      width: fit-content;
+      margin: 2rem auto 3rem;
+      padding: 1rem;
+    }
+  }
+}
+.operation {
+  padding: 1rem;
+  h1 {
+    margin-top: 2rem;
+  }
+  &__nav {
+    padding: 0 1rem;
+    ol {
+      counter-reset: list;
+      li {
+        display: flex;
+        align-items: center;
+        background-color: $base-bg;
+        font-weight: bold;
+        border-radius: 1rem;
+        line-height: 1.5rem;
+        margin: 2rem 0;
+        padding: 1.6rem 1.4rem;
+        @include shadow;
+        i {
+          color: #7e7e7e;
+          margin: 0 1.25rem 0 0.75rem;
+          font-size: 1.2rem;
+        }
+        &:before {
+          position: absolute;
+          counter-increment: list;
+          content: counter(list);
+          background-color: $primary-color;
+          color: $white;
+          text-align: center;
+          width: 1.5rem;
+          height: 1.5rem;
+          line-height: 1.5rem;
+          border-radius: 50%;
+          left: 1.3rem;
+        }
+        &:hover,
+        &:active {
+          background-color: $operation-bg;
+          i {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+.restaurants {
+  background-color: $base-bg;
+  padding: 1rem;
+  h1 {
+    margin-top: 2rem;
+  }
+  .links__restaurants {
+    flex-direction: column;
+    height: 15.625rem;
+    figure {
+      @include img-ratio;
+      border-radius: 1rem 1rem 0 0;
+      img {
+        padding-bottom: 14%;
+      }
+      .new {
+        position: absolute;
+        background-color: $tertiary-color;
+        font-weight: bold;
+        font-size: 0.875rem;
+        border-radius: 0.125rem;
+        color: darken($color: $tertiary-color, $amount: 40%);
+        padding: 0.375rem 0.75rem;
+        right: 1rem;
+        top: 1rem;
+      }
+    }
+  }
+  &__core {
+    display: flex;
+    .heart {
+      background-color: $white;
+      border: none;
+      border-radius: 1rem;
+      font-size: 1.5rem;
+      .fas {
+        position: relative;
+        color: $white;
+        opacity: 0;
+      }
+      .far {
+        position: absolute;
+      }
+      .fa-heart {
+        margin: 1rem;
+      }
+      &:active,
+      &:focus {
+        outline: none;
+        .fas {
+          opacity: 1;
+          background: linear-gradient(
+            to bottom left,
+            $primary-color,
+            $secondary-color
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: 2s;
+        }
+        .far {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
