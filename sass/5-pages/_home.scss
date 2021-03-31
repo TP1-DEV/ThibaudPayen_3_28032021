@@ -118,8 +118,11 @@
     .heart {
       background-color: $white;
       border: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       border-radius: 1rem;
       font-size: 1.5rem;
+
       .fas {
         position: relative;
         color: $white;
@@ -131,8 +134,7 @@
       .fa-heart {
         margin: 1rem;
       }
-      &:active,
-      &:focus {
+      &:hover {
         outline: none;
         .fas {
           opacity: 1;

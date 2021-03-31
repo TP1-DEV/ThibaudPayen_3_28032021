@@ -3,27 +3,33 @@
     font-family: "shrikhand";
   }
 }
-.restaurants__menu {
+.fig__restaurants {
+  @include img-ratio;
+  height: 15.625rem;
+}
+.restaurants__article {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: $base-bg;
-  width: 100%;
-  border-radius: 2rem 2rem 0 0;
-  padding: 2rem 1rem;
-  footer {
-    display: flex;
+  border-radius: 3rem 3rem 0 0;
+  margin-top: -3rem;
+  z-index: 1;
+  .restaurants__core {
+    align-items: center;
+    margin: 2rem 1rem 0 1rem;
+    h1 {
+      font-family: "shrikhand";
+      flex: 1;
+      font-size: 1.75rem;
+    }
+    .heart {
+      background-color: $base-bg;
+    }
   }
 }
-.fig__restaurants {
-  height: 15.625rem;
-  @include img-ratio;
-}
-.restaurants__article {
-  background-color: $base-bg;
-  border-radius: 2rem 2rem 0 0;
-}
 .restaurants__section {
-  padding: 1rem;
+  padding: 0 1rem;
   h1 {
     position: relative;
     text-transform: uppercase;
@@ -39,19 +45,58 @@
       left: 0;
     }
   }
-  .restaurants__desc {
-    p {
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      font-size: 0.925rem;
+  .cards {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    animation: cards 1s;
+    .check {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      transform: translateX(5rem);
+      i {
+        transform: rotate(0deg);
+      }
+    }
+    &:hover {
+      .price {
+        margin-right: 5rem;
+        transition: margin-right 500ms;
+      }
+      .check {
+        transform: translateX(0);
+        transition: transform 500ms;
+        i {
+          transform: rotate(360deg);
+          transition: transform 500ms;
+        }
+      }
     }
   }
-  footer {
+  &__footer {
     display: flex;
     justify-content: center;
     .btn {
       padding: 1rem 3rem;
       margin: 2rem 0 3rem 0;
     }
+  }
+}
+
+.restaurants__desc {
+  white-space: nowrap;
+  overflow: hidden;
+  h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.935rem;
   }
 }

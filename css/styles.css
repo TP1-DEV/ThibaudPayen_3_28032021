@@ -10,7 +10,8 @@ body {
   font-family: "roboto", sans-serif; }
 
 li {
-  list-style: none; }
+  list-style: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 a {
   text-decoration: none;
@@ -131,6 +132,35 @@ button {
       -ms-flex-align: end;
           align-items: flex-end;
   margin: 1rem; }
+
+.check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #99e2d0;
+  color: #fff;
+  border-radius: 0 1rem 1rem 0;
+  font-size: 1.25rem;
+  padding: 1rem 1.25rem; }
+
+@-webkit-keyframes cards {
+  0% {
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem); }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@keyframes cards {
+  0% {
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem); }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
 
 .homepage__form {
   display: -webkit-box;
@@ -266,6 +296,8 @@ button {
     .restaurants__core .heart {
       background-color: #fff;
       border: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       border-radius: 1rem;
       font-size: 1.5rem; }
       .restaurants__core .heart .fas {
@@ -276,9 +308,9 @@ button {
         position: absolute; }
       .restaurants__core .heart .fa-heart {
         margin: 1rem; }
-      .restaurants__core .heart:active, .restaurants__core .heart:focus {
+      .restaurants__core .heart:hover {
         outline: none; }
-        .restaurants__core .heart:active .fas, .restaurants__core .heart:focus .fas {
+        .restaurants__core .heart:hover .fas {
           opacity: 1;
           background: -webkit-gradient(linear, right top, left bottom, from(#9356dc), to(#ff79da));
           background: linear-gradient(to bottom left, #9356dc, #ff79da);
@@ -286,37 +318,20 @@ button {
           -webkit-text-fill-color: transparent;
           -webkit-transition: 2s;
           transition: 2s; }
-        .restaurants__core .heart:active .far, .restaurants__core .heart:focus .far {
+        .restaurants__core .heart:hover .far {
           opacity: 0; }
 
 .restaurants__title h1 {
   font-family: "shrikhand"; }
 
-.restaurants__menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: #f6f6f6;
-  width: 100%;
-  border-radius: 2rem 2rem 0 0;
-  padding: 2rem 1rem; }
-  .restaurants__menu footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-
 .fig__restaurants {
-  height: 15.625rem;
   position: relative;
   overflow: hidden;
   width: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1;
-          flex: 1; }
+          flex: 1;
+  height: 15.625rem; }
   .fig__restaurants img {
     position: absolute;
     top: 50%;
@@ -326,11 +341,34 @@ button {
             transform: translate(-50%, -50%); }
 
 .restaurants__article {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #f6f6f6;
-  border-radius: 2rem 2rem 0 0; }
+  border-radius: 3rem 3rem 0 0;
+  margin-top: -3rem;
+  z-index: 1; }
+  .restaurants__article .restaurants__core {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 2rem 1rem 0 1rem; }
+    .restaurants__article .restaurants__core h1 {
+      font-family: "shrikhand";
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      font-size: 1.75rem; }
+    .restaurants__article .restaurants__core .heart {
+      background-color: #f6f6f6; }
 
 .restaurants__section {
-  padding: 1rem; }
+  padding: 0 1rem; }
   .restaurants__section h1 {
     position: relative;
     text-transform: uppercase;
@@ -344,18 +382,61 @@ button {
       height: 0.25rem;
       top: 1.5rem;
       left: 0; }
-  .restaurants__section .restaurants__desc p {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-size: 0.925rem; }
-  .restaurants__section footer {
+  .restaurants__section .cards {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-animation: cards 1s;
+            animation: cards 1s; }
+    .restaurants__section .cards .check {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      -webkit-transform: translateX(5rem);
+              transform: translateX(5rem); }
+      .restaurants__section .cards .check i {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg); }
+    .restaurants__section .cards:hover .price {
+      margin-right: 5rem;
+      -webkit-transition: margin-right 500ms;
+      transition: margin-right 500ms; }
+    .restaurants__section .cards:hover .check {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      -webkit-transition: -webkit-transform 500ms;
+      transition: -webkit-transform 500ms;
+      transition: transform 500ms;
+      transition: transform 500ms, -webkit-transform 500ms; }
+      .restaurants__section .cards:hover .check i {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+        -webkit-transition: -webkit-transform 500ms;
+        transition: -webkit-transform 500ms;
+        transition: transform 500ms;
+        transition: transform 500ms, -webkit-transform 500ms; }
+  .restaurants__section__footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
-    .restaurants__section footer .btn {
+    .restaurants__section__footer .btn {
       padding: 1rem 3rem;
       margin: 2rem 0 3rem 0; }
+
+.restaurants__desc {
+  white-space: nowrap;
+  overflow: hidden; }
+  .restaurants__desc h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .restaurants__desc p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.935rem; }
 /*# sourceMappingURL=styles.css.map */
