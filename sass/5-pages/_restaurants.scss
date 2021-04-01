@@ -1,11 +1,6 @@
-.restaurants__title {
-  h1 {
-    font-family: "shrikhand";
-  }
-}
 .fig__restaurants {
   @include img-ratio;
-  height: 15.625rem;
+  height: $img-size;
 }
 .restaurants__article {
   position: relative;
@@ -16,25 +11,29 @@
   margin-top: -3rem;
   z-index: 1;
   .restaurants__core {
+    position: relative;
     align-items: center;
     margin: 2rem 1rem 0 1rem;
-    h1 {
+    h2 {
       font-family: "shrikhand";
       flex: 1;
       font-size: 1.75rem;
     }
     .heart {
+      position: absolute;
+      bottom: -0.5rem;
       background-color: $base-bg;
     }
   }
 }
 .restaurants__section {
   padding: 0 1rem;
-  h1 {
+  h2 {
     position: relative;
     text-transform: uppercase;
-    font-weight: lighter;
+    font-weight: 400;
     margin: 2rem 0 1.5rem 0;
+    font-size: 1rem;
     &::after {
       content: "";
       position: absolute;
@@ -48,18 +47,7 @@
   .cards {
     position: relative;
     overflow: hidden;
-    cursor: pointer;
     animation: cards 1s;
-    .check {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      transform: translateX(5rem);
-      i {
-        transform: rotate(0deg);
-      }
-    }
     &:hover {
       .price {
         margin-right: 5rem;
@@ -83,20 +71,22 @@
       margin: 2rem 0 3rem 0;
     }
   }
-}
-
-.restaurants__desc {
-  white-space: nowrap;
-  overflow: hidden;
-  h2 {
-    overflow: hidden;
+  .restaurants__desc {
     white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  p {
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-size: 0.935rem;
+    flex: 1;
+    h2 {
+      text-transform: none;
+      font-weight: bold;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    p {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 0.95rem;
+    }
   }
 }

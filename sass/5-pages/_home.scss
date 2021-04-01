@@ -22,12 +22,12 @@
     flex-direction: column;
     background-color: $base-bg;
     text-align: center;
-    h1 {
+    h2 {
       font-size: 1.5rem;
       margin: 2rem 3rem 1rem;
     }
     p {
-      font-weight: lighter;
+      font-weight: 400;
       margin: 0 1rem;
     }
     .btn {
@@ -39,14 +39,14 @@
 }
 .operation {
   padding: 1rem;
-  h1 {
+  h2 {
     margin-top: 2rem;
   }
   &__nav {
     padding: 0 1rem;
     ol {
       counter-reset: list;
-      li {
+      a {
         display: flex;
         align-items: center;
         background-color: $base-bg;
@@ -88,69 +88,26 @@
 .restaurants {
   background-color: $base-bg;
   padding: 1rem;
-  h1 {
+  h2 {
     margin-top: 2rem;
   }
-  .links__restaurants {
-    flex-direction: column;
-    height: 15.625rem;
-    figure {
-      @include img-ratio;
-      border-radius: 1rem 1rem 0 0;
-      img {
-        padding-bottom: 14%;
-      }
-      .new {
-        position: absolute;
-        background-color: $tertiary-color;
-        font-weight: bold;
-        font-size: 0.875rem;
-        border-radius: 0.125rem;
-        color: darken($color: $tertiary-color, $amount: 40%);
-        padding: 0.375rem 0.75rem;
-        right: 1rem;
-        top: 1rem;
-      }
+  &__core {
+    position: relative;
+    .heart {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
     }
   }
-  &__core {
-    display: flex;
-    .heart {
-      background-color: $white;
-      border: none;
-      cursor: pointer;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      border-radius: 1rem;
-      font-size: 1.5rem;
-
-      .fas {
-        position: relative;
-        color: $white;
-        opacity: 0;
-      }
-      .far {
-        position: absolute;
-      }
-      .fa-heart {
-        margin: 1rem;
-      }
-      &:hover {
-        outline: none;
-        .fas {
-          opacity: 1;
-          background: linear-gradient(
-            to bottom left,
-            $primary-color,
-            $secondary-color
-          );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          transition: 2s;
-        }
-        .far {
-          opacity: 0;
-        }
-      }
+}
+.links__restaurants {
+  flex-direction: column;
+  height: $img-size;
+  figure {
+    @include img-ratio;
+    border-radius: 1rem 1rem 0 0;
+    img {
+      padding-bottom: 13%;
     }
   }
 }
