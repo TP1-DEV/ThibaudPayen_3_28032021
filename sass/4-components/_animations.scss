@@ -1,8 +1,15 @@
 @keyframes cards {
   0% {
-    transform: translateY(1rem);
+    transform: translateY(1rem) scale(1.2);
+    opacity: 0.25;
   }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+
   100% {
     transform: translateY(0);
+    opacity: 1;
   }
 }

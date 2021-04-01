@@ -147,15 +147,99 @@ button {
   .cards .restaurants__desc p {
     margin: 0 0 0.75rem 0.75rem; }
 
-.price {
+.loader-omf {
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-weight: bold;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  margin: 0.75rem; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  z-index: 10;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: loader-screen 3s ease-in-out forwards;
+          animation: loader-screen 3s ease-in-out forwards; }
+  .loader-omf h2 {
+    font-family: "shrikhand";
+    font-size: 2rem; }
+  .loader-omf .loader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 10rem;
+    height: 4rem; }
+    .loader-omf .loader__bar {
+      height: 100%;
+      width: 1rem;
+      -webkit-animation: loader 1s backwards infinite alternate ease-in-out;
+              animation: loader 1s backwards infinite alternate ease-in-out; }
+      .loader-omf .loader__bar:nth-child(1) {
+        background: #9356dc;
+        -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s; }
+      .loader-omf .loader__bar:nth-child(2) {
+        background: #ff79da;
+        -webkit-animation-delay: 0.4s;
+                animation-delay: 0.4s; }
+      .loader-omf .loader__bar:nth-child(3) {
+        background: #99e2d0;
+        -webkit-animation-delay: 0.6s;
+                animation-delay: 0.6s; }
+      .loader-omf .loader__bar:nth-child(4) {
+        background: #ff79da;
+        -webkit-animation-delay: 0.8s;
+                animation-delay: 0.8s; }
+      .loader-omf .loader__bar:nth-child(5) {
+        background: #9356dc;
+        -webkit-animation-delay: 1s;
+                animation-delay: 1s; }
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5); }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
+
+@keyframes loader {
+  0% {
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5); }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
+
+@-webkit-keyframes loader-screen {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    visibility: hidden; } }
+
+@keyframes loader-screen {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    visibility: hidden; } }
 
 .check {
   position: absolute;
@@ -193,19 +277,31 @@ button {
 
 @-webkit-keyframes cards {
   0% {
-    -webkit-transform: translateY(1rem);
-            transform: translateY(1rem); }
+    -webkit-transform: translateY(1rem) scale(1.2);
+            transform: translateY(1rem) scale(1.2);
+    opacity: 0.25; }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 0.5; }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0); } }
+            transform: translateY(0);
+    opacity: 1; } }
 
 @keyframes cards {
   0% {
-    -webkit-transform: translateY(1rem);
-            transform: translateY(1rem); }
+    -webkit-transform: translateY(1rem) scale(1.2);
+            transform: translateY(1rem) scale(1.2);
+    opacity: 0.25; }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 0.5; }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0); } }
+            transform: translateY(0);
+    opacity: 1; } }
 
 .homepage__form {
   display: -webkit-box;
@@ -396,9 +492,16 @@ button {
       left: 0; }
   .restaurants__section .cards {
     position: relative;
-    overflow: hidden;
-    -webkit-animation: cards 1s;
-            animation: cards 1s; }
+    overflow: hidden; }
+    .restaurants__section .cards .price {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-weight: bold;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+      margin: 0.75rem; }
     .restaurants__section .cards:hover .price {
       margin-right: 5rem;
       -webkit-transition: margin-right 500ms;
@@ -417,6 +520,18 @@ button {
         transition: -webkit-transform 500ms;
         transition: transform 500ms;
         transition: transform 500ms, -webkit-transform 500ms; }
+    .restaurants__section .cards__1 {
+      opacity: 0;
+      -webkit-animation: cards 2s 1s forwards ease-out;
+              animation: cards 2s 1s forwards ease-out; }
+    .restaurants__section .cards__2 {
+      opacity: 0;
+      -webkit-animation: cards 2s 3s forwards ease-out;
+              animation: cards 2s 3s forwards ease-out; }
+    .restaurants__section .cards__3 {
+      opacity: 0;
+      -webkit-animation: cards 2s 5s forwards ease-out;
+              animation: cards 2s 5s forwards ease-out; }
   .restaurants__section__footer {
     display: -webkit-box;
     display: -ms-flexbox;
