@@ -25,86 +25,106 @@
       background-color: $base-bg;
     }
   }
-}
-.restaurants__section {
-  padding: 0 1rem;
-  h2 {
-    position: relative;
-    text-transform: uppercase;
-    font-weight: 400;
-    margin: 2rem 0 1.5rem 0;
-    font-size: 1rem;
-    &::after {
-      content: "";
-      position: absolute;
-      background-color: $tertiary-color;
-      width: 2.5rem;
-      height: 0.25rem;
-      top: 1.5rem;
-      left: 0;
+  .restaurants__section {
+    padding: 0 1rem;
+    &__title {
+      position: relative;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin: 2rem 0 1.5rem 0;
+      font-size: 1rem;
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: $tertiary-color;
+        width: 2.5rem;
+        height: 0.25rem;
+        top: 1.5rem;
+        left: 0;
+      }
+    }
+    .cards {
+      position: relative;
+      overflow: hidden;
+      .restaurants__desc {
+        white-space: nowrap;
+        overflow: hidden;
+        flex: 1;
+        h2 {
+          text-transform: none;
+          font-weight: bold;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        p {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          font-size: 0.95rem;
+        }
+      }
+      .price {
+        display: flex;
+        font-weight: bold;
+        align-items: flex-end;
+        margin: 0.75rem;
+      }
+      &:hover {
+        .price {
+          margin-right: 5rem;
+          transition: margin-right 500ms;
+        }
+        .check {
+          transform: translateX(0);
+          transition: transform 500ms;
+          i {
+            transform: rotate(360deg);
+            transition: transform 500ms;
+          }
+        }
+      }
+      &__1 {
+        opacity: 0;
+        animation: cards 2s 1s forwards ease-out;
+      }
+      &__2 {
+        opacity: 0;
+        animation: cards 2s 3s forwards ease-out;
+      }
+      &__3 {
+        opacity: 0;
+        animation: cards 2s 5s forwards ease-out;
+      }
+    }
+    &__footer {
+      display: flex;
+      justify-content: center;
+      .btn {
+        padding: 1rem 3rem;
+        margin: 2rem 0 3rem 0;
+      }
     }
   }
-  .cards {
-    position: relative;
-    overflow: hidden;
-    .price {
-      display: flex;
-      font-weight: bold;
-      align-items: flex-end;
-      margin: 0.75rem;
-    }
-    &:hover {
-      .price {
-        margin-right: 5rem;
-        transition: margin-right 500ms;
-      }
-      .check {
-        transform: translateX(0);
-        transition: transform 500ms;
-        i {
-          transform: rotate(360deg);
-          transition: transform 500ms;
+  @include media(lg) {
+    padding: 0 2rem;
+    .restaurants__section {
+      padding: 0;
+      .restaurants__section__menu {
+        @include media(lg) {
+          display: flex;
+          min-width: 100%;
+          section {
+            min-width: 32%;
+            margin: 0 0.5rem;
+          }
         }
       }
     }
-    &__1 {
-      opacity: 0;
-      animation: cards 2s 1s forwards ease-out;
-    }
-    &__2 {
-      opacity: 0;
-      animation: cards 2s 3s forwards ease-out;
-    }
-    &__3 {
-      opacity: 0;
-      animation: cards 2s 5s forwards ease-out;
-    }
   }
-
-  &__footer {
-    display: flex;
-    justify-content: center;
-    .btn {
-      padding: 1rem 3rem;
-      margin: 2rem 0 3rem 0;
-    }
-  }
-  .restaurants__desc {
-    white-space: nowrap;
-    overflow: hidden;
-    flex: 1;
-    h2 {
-      text-transform: none;
-      font-weight: bold;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-    p {
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      font-size: 0.95rem;
-    }
-  }
+}
+.page__menu {
+  @include media(xl);
+  max-width: 1200px;
+  margin: 0 auto;
 }

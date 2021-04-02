@@ -7,3 +7,9 @@ $footer-bg: #353535;
 $operation-bg: #f5edff;
 $white: #fff;
 $img-size: 15.625rem;
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);

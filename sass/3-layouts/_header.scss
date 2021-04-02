@@ -13,4 +13,8 @@
     left: 1rem;
     font-size: 1.5rem;
   }
+  @include media(xl) {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
