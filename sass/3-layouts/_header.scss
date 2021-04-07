@@ -1,20 +1,20 @@
 .title {
-  @include title;
-}
-.title__restaurant {
-  @include title;
-  position: relative;
+  margin: 1rem 0 0.5rem 0;
   h1 {
-    margin: 0;
+    font-family: "shrikhand";
+    text-align: center;
   }
-  .fas {
-    position: absolute;
-    top: 0.765rem;
-    left: 1rem;
-    font-size: 1.5rem;
-  }
-  @include media(xl) {
-    max-width: 1200px;
-    margin: 0 auto;
+  &--restaurant {
+    position: relative;
+    .fas {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 1.3rem;
+    }
+    @include media(xl) {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
   }
 }
