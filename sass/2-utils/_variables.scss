@@ -7,6 +7,8 @@ $footer-bg: #353535;
 $operation-bg: #f5edff;
 $white: #fff;
 $img-size: 15.625rem;
+$loader-color: $primary-color, $secondary-color, $tertiary-color,
+  $secondary-color, $primary-color;
 $breakpoints: (
   sm: 576px,
   md: 768px,

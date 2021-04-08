@@ -11,9 +11,9 @@
   }
   .far {
     position: absolute;
-    top: 0.175rem;
   }
-  &:hover {
+  &:hover,
+  &:focus {
     outline: none;
     .fas {
       opacity: 1;

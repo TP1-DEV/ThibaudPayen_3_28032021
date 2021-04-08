@@ -23,30 +23,10 @@
       height: 100%;
       width: 1rem;
       animation: loader 1s backwards infinite alternate ease-in-out;
-      &:nth-child(1) {
-        background: $primary-color;
-        animation-delay: 0.2s;
-      }
-      &:nth-child(2) {
-        background: $secondary-color;
-        animation-delay: 0.4s;
-      }
-      &:nth-child(3) {
-        background: $tertiary-color;
-        animation-delay: 0.6s;
-      }
-      &:nth-child(4) {
-        background: $secondary-color;
-        animation-delay: 0.8s;
-      }
-      &:nth-child(5) {
-        background: $primary-color;
-        animation-delay: 1s;
-      }
+      @include loader(0.2);
     }
   }
 }
-
 @keyframes loader {
   0% {
     transform: scaleY(0.5);
