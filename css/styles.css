@@ -147,7 +147,8 @@ button {
     color: #fff;
     opacity: 0; }
   .heart .far {
-    position: absolute; }
+    position: absolute;
+    top: 0.175rem; }
   .heart:hover {
     outline: none; }
     .heart:hover .fas {
