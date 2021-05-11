@@ -24,8 +24,8 @@ Vous décidez alors, avec l’équipe, que le site contiendra 4 menus dans un pr
 De retour à votre bureau, vous trouvez un post-it de Fanny.
 Vous trouvez les maquettes du site dans votre boîte mail, envoyées par Fanny.
 
-![ohmyfood]()
-![ohmyfoodrest]()
+![ohmyfood](https://user-images.githubusercontent.com/79422739/117824447-c9fed580-b26e-11eb-9286-f88943e497a6.png)
+![ohmyfoodrest](https://user-images.githubusercontent.com/79422739/117824463-ccf9c600-b26e-11eb-920a-797b718a4c1f.png)
 
 ## Compétences évaluées
 - Mettre en œuvre des effets CSS graphiques avancés
